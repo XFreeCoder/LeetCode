@@ -1,7 +1,10 @@
 #include <climits>
 #include <iostream>
 
+#include "../Test.h"
+
 using namespace std;
+using namespace leetcode;
 
 class Solution {
 public:
@@ -23,29 +26,9 @@ public:
 int main(int argc, char const *argv[]) {
   Solution s;
 
-  cout << "case 1: ";
-  int result = s.reverse(123);
-  if (result == 321) {
-    cout << "AC" << endl;
-  } else {
-    cout << "Fail" << endl;
-  }
-
-  cout << "case 2: ";
-  result = s.reverse(-123);
-  if (result == -321) {
-    cout << "AC" << endl;
-  } else {
-    cout << "Fail" << endl;
-  }
-
-  cout << "case 3: ";
-  result = s.reverse(120);
-  if (result == 21) {
-    cout << "AC" << endl;
-  } else {
-    cout << "Fail" << endl;
-  }
+  test("case 1", s.reverse(123), 321);
+  test("case 2", s.reverse(-123), -321);
+  test("case 3", s.reverse(120), 21);
 
   return 0;
 }

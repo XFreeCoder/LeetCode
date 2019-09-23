@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+Solution
+
+# Visual Studio Code
+.vscode/
