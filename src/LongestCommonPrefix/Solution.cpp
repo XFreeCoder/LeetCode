@@ -14,13 +14,15 @@ private:
   TrieNode **links;
 
 public:
-  TrieNode() { links = (TrieNode **)calloc(R, sizeof(TrieNode *)); }
+  TrieNode() {
+    links = new TrieNode *[R] { nullptr };
+  }
   ~TrieNode() {
     for (int i = 0; i < R; i++) {
       if (links[i] != nullptr)
-        links[i]->~TrieNode();
+        delete links[i];
     }
-    free(links);
+    delete[] links;
   }
   bool containsKey(char ch) { return links[ch - 'a'] != nullptr; }
   TrieNode *get(char ch) { return links[ch - 'a']; }
@@ -39,7 +41,7 @@ private:
 
 public:
   Trie() { root = new TrieNode(); }
-  ~Trie() { root->~TrieNode(); }
+  ~Trie() { delete root; }
   void insert(string word) {
     TrieNode *node = root;
     for (int i = 0; i < word.length(); i++) {
@@ -77,7 +79,7 @@ public:
     for (int i = 0; i < strs.size(); i++)
       trie->insert(strs[i]);
     string res = trie->searchLongestPrefix(strs[0]);
-    trie->~Trie();
+    delete trie;
     return res;
   }
 };
