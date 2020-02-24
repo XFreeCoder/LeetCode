@@ -9,7 +9,7 @@ LeetCode [source](https://leetcode.com/problems/palindrome-number/)
 The challenge with this problem is that you're not allowed to use any string. You have to take the integer and come up with a solution that doesn't employ string or any of its methods. From the first glance, what was apparent is that we'll need a data structure to hold the individual integers for comparison.
 
 ### Algorithm
-The algorithm for the solution is as follows:
+Details of the the algorithm for the solution is as follows:
 1. If it's a single digit, then it's a Palindrome Number. 
 2. Ignore any negative integers.
 3. For all other types of integers, pop each digit and store them in a vector in order.
