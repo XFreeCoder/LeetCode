@@ -13,7 +13,7 @@ Details of the the algorithm for the solution is as follows:
 1. If it's a single digit, then it's a Palindrome Number. 
 2. Ignore any negative integers.
 3. For all other types of integers, pop each digit and store them in a vector in order.
-4. Compare the `(n + i)th` integer with `(vector.size() - 1 - i)th integer. 
+4. Compare the `(n + i)th` integer with `(vector.size() - 1 - i)th` integer. 
 5. If this comparisos fails (i.e. `comparison == false`) return false. 
 6. Else continue the comparisons until `i` reaches the middle of the vector. If no `false` was return before, it means all the comparisons were `true` and therefore, the integer is a palindrome.
 
