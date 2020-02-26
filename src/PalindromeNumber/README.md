@@ -21,8 +21,8 @@ Details of the the algorithm for the solution is as follows:
 
 ### Complexity Analysis
 
-* Time Complexity: `// TODO`
-* Space Complexity: `// TODO`
+* Time Complexity: `O(log⁡(n))`
+* Space Complexity: `O(log⁡(n))`
 
 ### AC Result
 
