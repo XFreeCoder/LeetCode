@@ -40,10 +40,6 @@ public:
   };
 };
 
-// int stringToInteger(string input) { return stoi(input); }
-
-// string boolToString(bool input) { return input ? "True" : "False"; }
-
 int main() {
 
   Solution s;
@@ -57,14 +53,5 @@ int main() {
   test("Test case: ", s.isPalindrome(10022001), true);
   test("Test case: ", s.isPalindrome(1001), true);
   
-  // string line;
-  // while (getline(cin, line)) {
-  //   int x = stringToInteger(line);
-
-  //   bool ret = Solution().isPalindrome(x);
-
-  //   string out = boolToString(ret);
-  //   cout << out << endl;
-  // }
   return 0;
 }
