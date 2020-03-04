@@ -52,6 +52,5 @@ int main() {
   test("Test case: ", s.isPalindrome(0), true);
   test("Test case: ", s.isPalindrome(10022001), true);
   test("Test case: ", s.isPalindrome(1001), true);
-  
   return 0;
 }
