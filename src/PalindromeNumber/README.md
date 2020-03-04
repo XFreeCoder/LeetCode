@@ -26,7 +26,7 @@ Details of the the algorithm for the solution is as follows:
 
 ### AC Result
 
-**11509 / 11509 test cases passed**
+Test case result: **11509 / 11509 test cases passed**
 
 | Status | Runtime | Memory |
 |--------|---------|--------|
