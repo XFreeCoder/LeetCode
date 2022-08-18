@@ -7,4 +7,4 @@ Welcome everyone PR!
 1. test code with [`Test.h`](./src/Test.h)
 2. update [`README.md`](./README.md)
 3. format code with [`clang-format`](https://clang.llvm.org/docs/ClangFormat.html)
-4. check markdown documentions with [`markdownlint`](https://github.com/DavidAnson/markdownlint)
+4. format markdown documentions with [`prettier`](https://prettier.io/)

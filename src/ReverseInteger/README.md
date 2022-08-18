@@ -26,25 +26,25 @@ temp = rev * 10 + pop;
 rev = temp;
 ```
 
-However, this approach is dangerous, because the statement **temp = rev * 10 + pop** can cause overflow.
+However, this approach is dangerous, because the statement **temp = rev \* 10 + pop** can cause overflow.
 
 Luckily, it is easy to check beforehand whether or this statement would cause an overflow.
 
 To explain, lets assume that **rev** is positive.
 
-1. If **temp = rev * 10 + pop** causes overflow, then it must be that **rev >= INTMAX / 10**​
-2. If **rev > INTMAX / 10**​, then **temp = rev * 10 + pop** is guaranteed to overflow.
-3. If **rev == INTMAX / 10**​, then **temp = rev * 10+pop** will overflow if and only if **pop > 7**
+1. If **temp = rev \* 10 + pop** causes overflow, then it must be that **rev >= INTMAX / 10**​
+2. If **rev > INTMAX / 10**​, then **temp = rev \* 10 + pop** is guaranteed to overflow.
+3. If **rev == INTMAX / 10**​, then **temp = rev \* 10+pop** will overflow if and only if **pop > 7**
 
 Similar logic can be applied when **rev** is negative.
 
 ### Complexity Analysis
 
-* Time Complexity: **O(log⁡(x))**. There are roughly **log⁡10(x)** digits in **x**.
-* Space Complexity: **O(1)**.
+- Time Complexity: **O(log⁡(x))**. There are roughly **log⁡10(x)** digits in **x**.
+- Space Complexity: **O(1)**.
 
 ## AC Result
 
-| Status | Runtime | Memory |
-|--------|---------|--------|
-| Accepted | 0 ms | 8.1 MB |
+| Status   | Runtime | Memory |
+| -------- | ------- | ------ |
+| Accepted | 0 ms    | 8.1 MB |

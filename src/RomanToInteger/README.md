@@ -10,19 +10,19 @@ We can traverse from the back to the front, because under normal circumstances, 
 
 ### Algorithm
 
-| Expression | Operate | Description |
-|------------|---------|-------------|
-| ???I[sum] | sum -= 1 | when sum >= 5 |
-| ???X[sum] | sum -= 10 | when sum >= 50 |
-| ???C[sum] | sum -= 100 | when sum >= 500 |
+| Expression | Operate    | Description     |
+| ---------- | ---------- | --------------- |
+| ???I[sum]  | sum -= 1   | when sum >= 5   |
+| ???X[sum]  | sum -= 10  | when sum >= 50  |
+| ???C[sum]  | sum -= 100 | when sum >= 500 |
 
 ### Complexity Analysis
 
-* Time Complexity: **O(n)**. There are **n** characters in a roman numeral.
-* Space Complexity: **O(1)**.
+- Time Complexity: **O(n)**. There are **n** characters in a roman numeral.
+- Space Complexity: **O(1)**.
 
 ## AC Result
 
-| Status | Runtime | Memory |
-|--------|---------|--------|
-| Accepted | 12 ms | 8.3 MB |
+| Status   | Runtime | Memory |
+| -------- | ------- | ------ |
+| Accepted | 12 ms   | 8.3 MB |
