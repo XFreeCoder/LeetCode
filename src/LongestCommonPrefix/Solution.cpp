@@ -1,4 +1,3 @@
-#include <iostream>
 #include <vector>
 
 #include "../Test.h"
@@ -86,11 +85,11 @@ public:
 
 int main(int argc, char const *argv[]) {
   Solution s;
-  vector<string> v1({"flower", "flow", "flight"});
-  vector<string> v2({"dog", "racecar", "car"});
+  vector<string> input1({"flower", "flow", "flight"});
+  vector<string> input2({"dog", "racecar", "car"});
 
-  test("case 1", s.longestCommonPrefix(v1), string("fl"));
-  test("case 2", s.longestCommonPrefix(v2), string(""));
+  test("case 1", s.longestCommonPrefix(input1), string("fl"));
+  test("case 2", s.longestCommonPrefix(input2), string(""));
 
   return 0;
 }
