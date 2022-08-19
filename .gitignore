@@ -31,7 +31,9 @@
 *.out
 *.app
 Solution
-Solution.dSYM/
 
 # Visual Studio Code
 .vscode/
+
+Solution.dSYM/
+target/

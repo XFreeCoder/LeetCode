@@ -45,6 +45,6 @@ Similar logic can be applied when **rev** is negative.
 
 ## AC Result
 
-| Status   | Runtime | Memory |
-| -------- | ------- | ------ |
-| Accepted | 0 ms    | 8.1 MB |
+| Status   | Runtime | Memory | Language                                      |
+| -------- | ------- | ------ | --------------------------------------------- |
+| Accepted | 0 ms    | 8.1 MB | [cpp](../src/cpp/ReverseInteger/Solution.cpp) |
