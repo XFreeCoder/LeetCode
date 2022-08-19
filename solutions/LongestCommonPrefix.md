@@ -32,6 +32,6 @@ In the worst case query **q** has length **m** and it is equal to all **n** stri
 
 ## AC Result
 
-| Status   | Runtime | Memory |
-| -------- | ------- | ------ |
-| Accepted | 4 ms    | 9.6 MB |
+| Status   | Runtime | Memory | Language                                           |
+| -------- | ------- | ------ | -------------------------------------------------- |
+| Accepted | 4 ms    | 9.6 MB | [cpp](../src/cpp/LongestCommonPrefix/Solution.cpp) |

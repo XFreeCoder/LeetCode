@@ -9,13 +9,13 @@ using namespace leetcode;
 class Solution {
 public:
   int minSetSize(vector<int> &arr) {
-    unordered_map<int, int> count;
+    unordered_map<int, int> counter;
     for (int x : arr)
-      ++count[x];
+      ++counter[x];
 
     int totalCount = arr.size();
     vector<int> counting(totalCount + 1);
-    for (auto [_, freq] : count)
+    for (auto [_, freq] : counter)
       ++counting[freq];
 
     int ans = 0, removed = 0, half = totalCount / 2, freq = totalCount;
