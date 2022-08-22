@@ -24,7 +24,23 @@ pub struct Solution {}
 
 impl Solution {
     pub fn level_order(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<Vec<i32>> {
-        todo!("level_order");
+        fn traversal(root: &Option<Rc<RefCell<TreeNode>>>, ans: &mut Vec<Vec<i32>>, level: usize) {
+            let root_node = match root {
+                Some(it) => it,
+                _ => return,
+            };
+            if ans.len() == level {
+                ans.push(Vec::new());
+            }
+            ans[level].push(root_node.borrow().val);
+            traversal(&root_node.borrow().left, ans, level + 1);
+            traversal(&root_node.borrow().right, ans, level + 1);
+        }
+
+        let mut ans: Vec<Vec<i32>> = Vec::new();
+        traversal(&root, &mut ans, 0);
+
+        return ans;
     }
 }
 
@@ -52,21 +68,21 @@ mod tests {
         };
     }
 
-    fn _make_tree(vec: &Vec<Option<i32>>, root_index: usize) -> Option<Rc<RefCell<TreeNode>>> {
-        let val = vec.get(root_index);
-        match val {
-            Some(val) => {
-                return make_tree_node(
-                    *val,
-                    _make_tree(vec, 2 * root_index + 1),
-                    _make_tree(vec, 2 * root_index + 2),
-                );
-            }
-            None => None,
-        }
-    }
-
     fn make_tree(vec: &Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
+        fn _make_tree(vec: &Vec<Option<i32>>, root_index: usize) -> Option<Rc<RefCell<TreeNode>>> {
+            let val = vec.get(root_index);
+            match val {
+                Some(val) => {
+                    return make_tree_node(
+                        *val,
+                        _make_tree(vec, 2 * root_index + 1),
+                        _make_tree(vec, 2 * root_index + 2),
+                    );
+                }
+                None => None,
+            }
+        }
+
         return _make_tree(vec, 0);
     }
 
