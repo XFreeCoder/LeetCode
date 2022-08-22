@@ -36,20 +36,59 @@ mod tests {
     use super::Solution;
     use super::TreeNode;
 
-    fn get_tree_node(val: Option<i32>) -> Option<Rc<RefCell<TreeNode>>> {
+    fn make_tree_node(
+        val: Option<i32>,
+        left: Option<Rc<RefCell<TreeNode>>>,
+        right: Option<Rc<RefCell<TreeNode>>>,
+    ) -> Option<Rc<RefCell<TreeNode>>> {
         return match val {
-            Some(val) => Some(Rc::new(RefCell::new(TreeNode::new(val)))),
+            Some(val) => {
+                let mut node = TreeNode::new(val);
+                node.left = left;
+                node.right = right;
+                return Some(Rc::new(RefCell::new(node)));
+            }
             None => None,
         };
     }
 
-    fn build_tree_from_vec(vec: Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
-        todo!("build_tree_from_vec");
+    fn _make_tree(vec: &Vec<Option<i32>>, root_index: usize) -> Option<Rc<RefCell<TreeNode>>> {
+        let val = vec.get(root_index);
+        match val {
+            Some(val) => {
+                return make_tree_node(
+                    *val,
+                    _make_tree(vec, 2 * root_index + 1),
+                    _make_tree(vec, 2 * root_index + 2),
+                );
+            }
+            None => None,
+        }
+    }
+
+    fn make_tree(vec: &Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
+        return _make_tree(vec, 0);
+    }
+
+    #[test]
+    fn test_make_tree() {
+        let vec = vec![Some(3), Some(9), Some(20), None, None, Some(15), Some(7)];
+        let root = make_tree(&vec);
+        let expect = make_tree_node(
+            Some(3),
+            make_tree_node(Some(9), None, None),
+            make_tree_node(
+                Some(20),
+                make_tree_node(Some(15), None, None),
+                make_tree_node(Some(7), None, None),
+            ),
+        );
+        assert_eq!(root, expect);
     }
 
     #[test]
     fn test1() {
-        let root = build_tree_from_vec(vec![
+        let root = make_tree(&vec![
             Some(3),
             Some(9),
             Some(20),
@@ -58,6 +97,7 @@ mod tests {
             Some(15),
             Some(7),
         ]);
+
         assert_eq!(
             Solution::level_order(root),
             vec![vec![3], vec![9, 20], vec![15, 7]]
@@ -66,13 +106,13 @@ mod tests {
 
     #[test]
     fn test2() {
-        let root = build_tree_from_vec(vec![Some(1)]);
+        let root = make_tree(&vec![Some(1)]);
         assert_eq!(Solution::level_order(root), vec![vec![1]]);
     }
 
     #[test]
     fn test3() {
-        let root = build_tree_from_vec(vec![]);
+        let root = make_tree(&vec![]);
         assert_eq!(Solution::level_order(root), vec![] as Vec<Vec<i32>>);
     }
 }
