@@ -40,7 +40,7 @@ impl Solution {
         let mut ans: Vec<Vec<i32>> = Vec::new();
         traversal(&root, &mut ans, 0);
 
-        return ans;
+        ans
     }
 }
 
@@ -57,33 +57,31 @@ mod tests {
         left: Option<Rc<RefCell<TreeNode>>>,
         right: Option<Rc<RefCell<TreeNode>>>,
     ) -> Option<Rc<RefCell<TreeNode>>> {
-        return match val {
+        match val {
             Some(val) => {
                 let mut node = TreeNode::new(val);
                 node.left = left;
                 node.right = right;
-                return Some(Rc::new(RefCell::new(node)));
+                Some(Rc::new(RefCell::new(node)))
             }
             None => None,
-        };
+        }
+    }
+
+    fn _make_tree(vec: &Vec<Option<i32>>, root_index: usize) -> Option<Rc<RefCell<TreeNode>>> {
+        let val = vec.get(root_index);
+        match val {
+            Some(val) => make_tree_node(
+                *val,
+                _make_tree(vec, 2 * root_index + 1),
+                _make_tree(vec, 2 * root_index + 2),
+            ),
+            None => None,
+        }
     }
 
     fn make_tree(vec: &Vec<Option<i32>>) -> Option<Rc<RefCell<TreeNode>>> {
-        fn _make_tree(vec: &Vec<Option<i32>>, root_index: usize) -> Option<Rc<RefCell<TreeNode>>> {
-            let val = vec.get(root_index);
-            match val {
-                Some(val) => {
-                    return make_tree_node(
-                        *val,
-                        _make_tree(vec, 2 * root_index + 1),
-                        _make_tree(vec, 2 * root_index + 2),
-                    );
-                }
-                None => None,
-            }
-        }
-
-        return _make_tree(vec, 0);
+        _make_tree(vec, 0)
     }
 
     #[test]

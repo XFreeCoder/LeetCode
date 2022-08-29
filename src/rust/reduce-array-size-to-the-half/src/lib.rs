@@ -26,7 +26,7 @@ impl Solution {
             removed += freq;
             counting[freq] -= 1;
         }
-        return ans;
+        ans
     }
 }
 
