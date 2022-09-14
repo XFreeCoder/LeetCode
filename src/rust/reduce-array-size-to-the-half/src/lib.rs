@@ -6,7 +6,7 @@ impl Solution {
     pub fn min_set_size(arr: Vec<i32>) -> i32 {
         let mut counter = HashMap::new();
 
-        arr.iter().for_each(|x| {
+        arr.iter().for_each(|&x| {
             let count = counter.entry(x).or_insert(0);
             *count += 1;
         });
@@ -26,7 +26,7 @@ impl Solution {
             removed += freq;
             counting[freq] -= 1;
         }
-        return ans;
+        ans
     }
 }
 

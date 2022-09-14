@@ -29,4 +29,4 @@ In worst case, the maximum value in frequencies array is **1**, this happens whe
 | Status   | Runtime | Memory  | Language                                                     |
 | -------- | ------- | ------- | ------------------------------------------------------------ |
 | Accepted | 278 ms  | 77.7 MB | [cpp](../src/cpp/ReduceArraySizeToTheHalf/Solution.cpp)      |
-| Accepted | 35 ms   | 7 MB    | [rust](../src/rust/reduce-array-size-to-the-half/src/lib.rs) |
+| Accepted | 19 ms   | 5 MB    | [rust](../src/rust/reduce-array-size-to-the-half/src/lib.rs) |
