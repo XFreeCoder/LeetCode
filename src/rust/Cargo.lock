@@ -3,5 +3,5 @@
 version = 3
 
 [[package]]
-name = "binary-tree-level-order-traversal"
+name = "leetcode-solution"
 version = "0.1.0"

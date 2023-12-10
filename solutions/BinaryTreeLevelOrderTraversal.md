@@ -23,6 +23,6 @@ DFS with a level parameters.
 
 ## AC Result
 
-| Status   | Runtime | Memory | Language                                                         |
-| -------- | ------- | ------ | ---------------------------------------------------------------- |
-| Accepted | 0 ms    | 2.4 MB | [rust](../src/rust/binary-tree-level-order-traversal/src/lib.rs) |
+| Status   | Runtime | Memory | Language                                                     |
+| -------- | ------- | ------ | ------------------------------------------------------------ |
+| Accepted | 0 ms    | 2.4 MB | [rust](../src/rust/src/binary_tree_level_order_traversal.rs) |
