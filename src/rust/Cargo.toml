@@ -1,5 +1,5 @@
 [package]
-name = "reduce-array-size-to-the-half"
+name = "leetcode-solution"
 version = "0.1.0"
 edition = "2021"
 
